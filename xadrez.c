@@ -35,7 +35,13 @@ Torre: Movendo 05 casas para direita
 Bispo: movendo 05 casas na diagonal
 rainha: movendo 08 casas a esquerda 
 */
-    int movtorre = 0, movbispo1 = 0, movbispo2 = 0, movrainha = 8;
+
+int main () {
+
+
+    //declaracao de variaveis
+    int movtorre = 0, movbispo1 = 0, movbispo2 = 0, movrainha = 8, movcavalo1 = 3;
+    char  movcavalo2 = 'A';
 
 
 printf("Bem vindo ao teste de xadrez!\n"); // tela de bem vindo
@@ -62,7 +68,7 @@ printf("MOVIMENTAÇÃO DA TORRE:\n");
 
     if (movbispo1 > 0 && movbispo2 > 0)   
 
-    printf("Direita, cima!\n");
+    printf("cima, direita!\n");
 
     movbispo1++;
     movbispo2++;
@@ -83,10 +89,21 @@ printf("MOVIMENTAÇÃO DA TORRE:\n");
         printf("Esquerda!\n");      
     }
 
+    printf("\n");
+
+    //estrutura de loop aninhada
+
+    printf("MOVIMENTAÇÃO DO CAVALO!\n");
+
+    for (movcavalo2; movcavalo2 < 'B' ; ++movcavalo2) { //loop externo
+        
+        for (movcavalo1; movcavalo1 > 1; movcavalo1--) { //loop interno
+            printf("Baixo!\n"); //impressão do loop interno      
+        }
+        printf("Esquerda!\n"); //impressão do loop externo
+    }
+
     return 0;
 
 }
 
-
-    return 0;
-}
