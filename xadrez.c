@@ -28,16 +28,19 @@ void rainha (int mrainha) {
 }
 
 //estrutura de movimentação do cavalo
-void cavalo (int mcavalo) {
-    for (mcavalo; mcavalo < 2; mcavalo++) { //loop externo 
-        printf("Cima!\n"); //impressão do loop externo
+void cavalo (int mcavalo, int mcavalo2) {
+    
+    for (mcavalo = 0; mcavalo < 1; mcavalo++) { //loop externo 
+               
 
-       for (mcavalo; mcavalo == 1; mcavalo++) { //loop interno 
-            printf("Direita!\n"); //impressão do loop interno      
+       for (mcavalo2 = 0; mcavalo2 < 2; mcavalo2++) { //loop interno 
+            printf("Cima!\n"); //impressão do loop interno   
+            
         }
-        
+        printf("Direita!\n"); //impressão do loop externo         
     }
 }
+
 
 
 
@@ -53,7 +56,7 @@ int main () {
 
 
     //declaracao de variaveis
-    int movtorre = 5, movbispo1 = 5, movrainha = 8, movcavalo1 = 0;
+    int movtorre = 5, movbispo1 = 5, movrainha = 8, movcavalo1 = 0, mcavalo2 = 0;
     
 
 
@@ -85,7 +88,7 @@ printf("\n");
 //estrutura de loop aninhada para movimentação do cavalo
 
 printf("MOVIMENTAÇÃO DO CAVALO!\n");
-cavalo(movcavalo1);
+cavalo(movcavalo1, mcavalo2);
 printf("\n");
    
 
