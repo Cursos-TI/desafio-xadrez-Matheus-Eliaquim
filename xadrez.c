@@ -73,11 +73,12 @@ printf("\n");
 printf("MOVIMENTAÇÃO DO CAVALO!\n");
 
     for (movcavalo1; movcavalo1 < 2; movcavalo1++) { //loop externo 
-        
-        if (movcavalo1 < 1) { //loop interno 
+        printf("Cima!\n"); //impressão do loop externo
+
+       for (movcavalo1; movcavalo1 == 1; movcavalo1++) { //loop interno 
             printf("Direita!\n"); //impressão do loop interno      
         }
-        printf("Cima!\n"); //impressão do loop externo
+        
     }
 
     return 0;
