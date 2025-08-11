@@ -1,32 +1,35 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+//estrutura de movimentação da torre com recurso
+void torre(int mtorre) {
+    if(mtorre <= 5 && mtorre > 0){
+        printf("Direita!\n");
+        mtorre++;
+        torre(mtorre);
+        }
+}
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+//estrutura de movimentação do bispo com recurso
+void bispo(int mbispo, char mbispo2) {
+    if(mbispo2 >= 'A' && mbispo2 <= 'E') {
+        mbispo2++;
+        printf("Cima!\n");    
+    if (mbispo <= 5 && mbispo > 0) {
+        mbispo++;    
+        printf("Direita!\n"); 
+    } 
+        bispo(mbispo, mbispo2); 
+        }   
+}      
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+//estrutura de movimentação da rainha com recurso
+void rainha (mrainha) {
+    if(mrainha > 0 && mrainha <=8){
+        mrainha--;
+        printf("Esqueda!\n");
+        rainha(mrainha);
+    }
+}
 
 /* 
 O jogo está em fase inicial e por enquanto deve fazer a movimentação das tres peças abaixo:
@@ -40,7 +43,7 @@ int main () {
 
 
     //declaracao de variaveis
-    int movtorre = 0, movbispo1 = 0, movbispo2 = 0, movrainha = 8, movcavalo1 = 3;
+    int movtorre = 1, movbispo1 = 1, movbispo2 = 'A', movrainha = 8, movcavalo1 = 1;
     char  movcavalo2 = 'A';
 
 
@@ -50,57 +53,35 @@ printf("pois ainda estamos em fase de teste!\n\n");
 
 //movimentação das peças
 
+
+//estrutura de movimento definida na função void torre
 printf("MOVIMENTAÇÃO DA TORRE:\n");
+torre(movtorre);
+printf("\n");
 
- while (movtorre <= 5) {  // while deve conter uma condição que caso seja falsa interrompe a repetição do codigo
-        if (movtorre > 0) { 
-            printf("Direita!\n");
-        }
-        movtorre++; // variavel para evitar loop infinito no codigo
-    }
-    printf("\n"); // linha de separação
 
-    //a partir daqui esta o comando de movimentação do bispo
 
-    printf("MOVIMENTAÇÃO DO BISPO:\n");
+//estrutura de movimento definida na função void bispo
+printf("MOVIMENTAÇÃO DO BISPO:\n");
+bispo(movbispo1, movbispo2);
+printf("\n");
 
-    do {   //executa o codigo ao menos um vez, mesmo que a condição seja falsa  
+    
+//estrutura de movimento definida na função void rainha
+printf("MOVIMENTAÇÃO DA RAINHA!\n");
+rainha(movrainha);   
+printf("\n");
 
-    if (movbispo1 > 0 && movbispo2 > 0)   
+//estrutura de loop aninhada para movimentação do cavalo
 
-    printf("cima, direita!\n");
-
-    movbispo1++;
-    movbispo2++;
-
-    } while (movbispo1 <= 5 && movbispo2 <= 5); //condição para execução do codigo
-
-    printf("\n"); // linha de separação
-
-    printf("MOVIMENTAÇÃO DA RAINHA!\n");
-
-    /*for (variavel, condição, incremento), a variavel pode ser criada dentro do FOR
-    mas só pode ser usada nessa parte do codigo se for criada aqui, para usar a variavel em 
-    outros lugares do codigo a variavel deve ser criada fora do FOR*/
-
-    for (movrainha; movrainha > 0; movrainha--) { // usar ; como separador. EXEMPLO for (a; b == 0; c++)
-
-        if (movrainha <= 8)
-        printf("Esquerda!\n");      
-    }
-
-    printf("\n");
-
-    //estrutura de loop aninhada
-
-    printf("MOVIMENTAÇÃO DO CAVALO!\n");
+printf("MOVIMENTAÇÃO DO CAVALO!\n");
 
     for (movcavalo2; movcavalo2 < 'B' ; ++movcavalo2) { //loop externo
         
-        for (movcavalo1; movcavalo1 > 1; movcavalo1--) { //loop interno
-            printf("Baixo!\n"); //impressão do loop interno      
+        for (movcavalo1; movcavalo1 > 0 && movcavalo1 < 3; movcavalo1++) { //loop interno
+            printf("Cima!\n"); //impressão do loop interno      
         }
-        printf("Esquerda!\n"); //impressão do loop externo
+        printf("Direita!\n"); //impressão do loop externo
     }
 
     return 0;
