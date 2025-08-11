@@ -27,6 +27,20 @@ void rainha (int mrainha) {
         
 }
 
+//estrutura de movimentação do cavalo
+void cavalo (int mcavalo) {
+    for (mcavalo; mcavalo < 2; mcavalo++) { //loop externo 
+        printf("Cima!\n"); //impressão do loop externo
+
+       for (mcavalo; mcavalo == 1; mcavalo++) { //loop interno 
+            printf("Direita!\n"); //impressão do loop interno      
+        }
+        
+    }
+}
+
+
+
 /* 
 O jogo está em fase inicial e por enquanto deve fazer a movimentação das tres peças abaixo:
 
@@ -71,15 +85,9 @@ printf("\n");
 //estrutura de loop aninhada para movimentação do cavalo
 
 printf("MOVIMENTAÇÃO DO CAVALO!\n");
-
-    for (movcavalo1; movcavalo1 < 2; movcavalo1++) { //loop externo 
-        printf("Cima!\n"); //impressão do loop externo
-
-       for (movcavalo1; movcavalo1 == 1; movcavalo1++) { //loop interno 
-            printf("Direita!\n"); //impressão do loop interno      
-        }
-        
-    }
+cavalo(movcavalo1);
+printf("\n");
+   
 
     return 0;
 
