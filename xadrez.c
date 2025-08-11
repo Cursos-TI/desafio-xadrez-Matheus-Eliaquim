@@ -2,33 +2,29 @@
 
 //estrutura de movimentação da torre com recurso
 void torre(int mtorre) {
-    if(mtorre <= 5 && mtorre > 0){
+    if(mtorre > 0) {
         printf("Direita!\n");
-        mtorre++;
-        torre(mtorre);
-        }
+        torre(mtorre - 1);        
+        } 
+        
 }
 
 //estrutura de movimentação do bispo com recurso
-void bispo(int mbispo, char mbispo2) {
-    if(mbispo2 >= 'A' && mbispo2 <= 'E') {
-        mbispo2++;
-        printf("Cima!\n");    
-    if (mbispo <= 5 && mbispo > 0) {
-        mbispo++;    
-        printf("Direita!\n"); 
-    } 
-        bispo(mbispo, mbispo2); 
-        }   
-}      
+void bispo(int mbispo) {
+    if(mbispo > 0) {         
+        printf("Cima, Direita!\n"); 
+        bispo(mbispo - 1); 
+        } 
+            
+    }      
 
 //estrutura de movimentação da rainha com recurso
-void rainha (mrainha) {
-    if(mrainha > 0 && mrainha <=8){
-        mrainha--;
+void rainha (int mrainha) {
+    if(mrainha > 0) {
         printf("Esqueda!\n");
-        rainha(mrainha);
-    }
+        rainha(mrainha - 1);
+        } 
+        
 }
 
 /* 
@@ -43,8 +39,8 @@ int main () {
 
 
     //declaracao de variaveis
-    int movtorre = 1, movbispo1 = 1, movbispo2 = 'A', movrainha = 8, movcavalo1 = 1;
-    char  movcavalo2 = 'A';
+    int movtorre = 5, movbispo1 = 5, movrainha = 8, movcavalo1 = 0;
+    
 
 
 printf("Bem vindo ao teste de xadrez!\n"); // tela de bem vindo
@@ -63,7 +59,7 @@ printf("\n");
 
 //estrutura de movimento definida na função void bispo
 printf("MOVIMENTAÇÃO DO BISPO:\n");
-bispo(movbispo1, movbispo2);
+bispo(movbispo1);
 printf("\n");
 
     
@@ -76,12 +72,12 @@ printf("\n");
 
 printf("MOVIMENTAÇÃO DO CAVALO!\n");
 
-    for (movcavalo2; movcavalo2 < 'B' ; ++movcavalo2) { //loop externo
+    for (movcavalo1; movcavalo1 < 2; movcavalo1++) { //loop externo 
         
-        for (movcavalo1; movcavalo1 > 0 && movcavalo1 < 3; movcavalo1++) { //loop interno
-            printf("Cima!\n"); //impressão do loop interno      
+        if (movcavalo1 < 1) { //loop interno 
+            printf("Direita!\n"); //impressão do loop interno      
         }
-        printf("Direita!\n"); //impressão do loop externo
+        printf("Cima!\n"); //impressão do loop externo
     }
 
     return 0;
